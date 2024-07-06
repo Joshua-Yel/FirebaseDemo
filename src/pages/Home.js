@@ -14,8 +14,8 @@ export default function Home() {
   useEffect(() => {
     const ref = collection(db, 'articles');
     // onSnapshot(ref, (snapshot)=>{
-    //     console.log(snapshot);
-    //     let results = []
+    //     console.ltslog(snapshot);
+    //     let resu = []
     //      snapshot.docs.forEach(doc => {
     //        results.push({id: doc.id, ...doc.data()});
     //      });
@@ -31,12 +31,15 @@ export default function Home() {
         });
         setArticles(results);
       })    
-  },[])
+  },)
 
   
   const handleDelete = async (id) => {
     const ref = doc(db, 'articles', id)
-    await deleteDoc(ref);
+    //loading=true
+    await deleteDoc(ref)//.then(
+      //loading=false
+   // )
   }
 
   return (
